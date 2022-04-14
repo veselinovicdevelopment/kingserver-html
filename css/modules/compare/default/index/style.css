@@ -1,0 +1,277 @@
+.container{
+    width: 100% !important;
+    padding: 0 46px;
+}
+
+@media screen and (max-width: 1074px){
+    .container {
+        padding: 0 10px;
+    }
+}
+
+.nav > li > a {
+     padding: 12px 0px !important;
+}
+/*COMPARE PAGE TITLE WRAPPER CSS*/
+.simple-hero__flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.simple-hero__col{
+    max-width: 240px;
+    width: 100%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 240px;
+    flex: 0 0 240px;
+}
+.simple-hero__company {
+    background: #E8F3FF;
+    border: 1px solid #DAE0E4;
+    border-radius: 4px;
+    padding: 10px 10px 10px 42px;
+    position: relative;
+    font: 14px/1.7 'Avenir Next Cyr', sans-serif;
+    color: #039EFE;
+    text-align: left;
+}
+.simple-hero__company-img {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.simple-hero__ic-compare {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin: 0 8px;
+}
+.simple-hero__ic-compare {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin: 0 8px;
+}
+.select-custom {
+    background: #f8f8f9;
+    border: 1px solid #f4f4f8;
+    border-radius: 4px;
+    height: 47px;
+}
+.simple-hero .btn {
+    padding: 12px 77px;
+}
+.simple-hero-compare select{
+    width: 100%;
+    height: 100%;
+    border-color: transparent;
+    background-color: transparent;
+    align-items: center;
+    color: #8E8F93;
+}
+.simple-hero-compare select option{
+    border-color: transparent;
+}
+.simple-hero-compare ul.list-card-item{
+    padding: 0px !important;
+    margin:  0px !important;
+}
+.simple-hero-compare .content-wrap-v1{
+    padding-bottom: 60px;
+    padding-top: 60px;
+    max-width: unset;
+    width: 100%;
+}
+.simple-hero-compare .stop-submission-styles{
+    color: #c5c5c5;
+    cursor: not-allowed;
+}
+.simple-hero-compare .field-host-alias, .select2 .selection span{
+    height: 100% !important;
+}
+.simple-hero-compare .select2-container--krajee{
+    height: 100% !important;
+}
+.simple-hero-compare .select2-selection--single{
+    height: 100% !important;
+    text-align: left;
+    padding: 12px 20px 11px 5px !important;
+    border: none !important;
+}
+.simple-hero-compare .select2-container--krajee .select2-selection__clear {
+    top: 0.9rem !important;
+}
+.simple-hero-compare ul.breadcrumb{
+    background-color: transparent !important;
+}
+ul.select2-results__options{
+    font-size: 14px !important;
+}
+
+@media screen and (max-width: 768px) {
+    .simple-hero-compare .content-wrap-v1{
+        margin-bottom: unset !important;
+    }
+}
+
+.pay-soc-wrap-v2 ul {
+    margin-top: revert;
+    margin-bottom: revert;
+}
+@media screen and (max-width: 556px) {
+    .simple-hero-compare .simple-hero__flex{
+        flex-direction: column;
+    }
+    .simple-hero-compare .simple-hero__col{
+        max-height: 45px;
+    }
+}
+/*COMPARE PAGE TITLE WRAPPER CSS END*/
+
+/*CUSTOME*/
+.compare-hosts-wrapper .card-wrap{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding:unset;
+}
+.compare-hosts-wrapper .card-wrap .card{
+    width: 32% !important;
+    max-width: 32% !important;
+    margin-right: 0px !important;
+}
+@media (max-width: 991px) {
+    .compare-hosts-wrapper .card-wrap{
+        justify-content: space-between;
+    }
+    .compare-hosts-wrapper .card-wrap .card{
+        width: 48% !important;
+        max-width: 48% !important;
+    }
+}
+@media (max-width: 767px) {
+    .compare-hosts-wrapper .card-wrap .card{
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+.compare-hosts-wrapper .page-2, .compare-hosts-wrapper .page-3{
+    display: none;
+}
+.compare-hosts-wrapper .breadcrumb-item-2.active a {
+    color: #ffffff !important;
+    background: #039EFE !important;
+}
+
+.compare-hosts-wrapper .hostings-section{
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.compare-hosts-wrapper .review-section{
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+
+
+@media (max-width: 1200px) {
+    .compare-hosts-wrapper .hostings-section,.compare-hosts-wrapper .review-section{
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 0px 0 0 !important;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 992px){
+    .compare-hosts-wrapper > div{
+        flex-wrap: wrap-reverse;
+    }
+}
+
+@media (min-width: 1550px){
+    .section.two-cols-section .container {
+        width: 1500px;
+        max-width: 1500px !important;
+    }
+    .compare-hosts-wrapper {
+        max-width: 1500px !important;
+    }
+}
+
+.mini-card-box{
+    max-height: 421px;
+}
+
+.hide--options {
+    display: none;
+}
+.card__subheading{
+    display: flex;
+    align-items: center;
+    max-height: 20px;
+    width: 45%!important;
+}
+.card__description{
+    width: 55% !important;
+    padding-left:0px !important;
+}
+.card__subheading .card__sub-icon{
+    margin-right: 5px !important;
+}
+.hide--options li:nth-child(3) .card__subheading{
+    width: 85%!important;
+}
+.hide--options li:nth-child(3) .card__description{
+    width: 15%!important;
+}
+.section-col--min {
+    padding: 0 0 0 25px !important;
+}
+.hostings-section{
+    padding-right: 25px !important;
+}
+.title-list-item-v1 > h4 {
+    font-family: 'Avenir Next Cyr',sans-serif !important;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 18px;
+}
+body {
+    font-family: 'Avenir Next Cyr',sans-serif !important;
+}
+
+.footer-about-top .list-icon{
+    /*margin: 16px 0px !important;*/
+}
+
+.footer-about-top .list-icon  a, a, div.list-top-footer ul.list-item a{
+    text-decoration: inherit !important;.footer-about-top .ks-phone-num
+}
+
+.overflow-ellipsis{
+    width: 200px;
+    padding: 2px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.title-list-item-v1 h4 {
+     padding-right: unset !important;
+}
+

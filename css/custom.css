@@ -1,0 +1,40 @@
+.table-protect-servers tr {
+    cursor: default;
+}
+.article-img {
+    max-width: 80% !important;
+}
+@media all and (max-width: 768px) {
+    .article-img {
+        max-width: 100% !important;
+    }
+}
+.footer .list-item .title {
+    text-transform: uppercase;
+}
+@media all and (max-width: 768px) {
+    .footer .list-item .subtitle {
+        font-size: 14px;
+        margin-top: 0;
+        padding: 8px 0;
+    }
+}
+h2.no-margin {
+    margin: 0 !important;
+}
+.perf-scale {
+    width: 126px;
+    height: 9px;
+    background: url("/img/scale.png") repeat-x;
+    position: relative;
+}
+.perf-scale .active {
+    display: block;
+    height: 9px;
+    width: 0;
+    background: url("/img/scale-active.png") repeat-x;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}

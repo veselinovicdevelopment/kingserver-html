@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07.1.Speedtest</title>
+    <script src="https://kit.fontawesome.com/b92da27cc9.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.new.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="header position-relative">
+    <div class="container">
+        <div class="row ">
+            <div class="header__top-wrap col-12 row mx-0 justify-content-between align-items-center">
+                <div class="header__logo-wrap col-auto px-0">
+                    <a href="#" class="d-flex align-items-center header__logo">
+                        <img src="images/header-logo.svg" alt="" class="header__logo-image">
+                        <span class="header__logo-text-wrap">
+                            <span class="header__logo-heading fw-600 d-block mb-lg-1">KING SERVERS</span>
+                            <span class="d-lg-block d-none">Выделенные серверы VPS / VDS хостинг.</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="d-flex flex-wrap align-items-center justify-content-end col-lg-auto col-6 px-0">
+                    <a href="#" class="btn btn-sale d-inline-flex  align-items-center fw-500 discount_wrap_btn ml-0">
+                        <img src="images/icon1.svg" alt="" class="mr-lg-3">
+                        <span class="d-lg-inline-block d-none">РАСПРОДАЖА</span>
+                    </a>
+                    <div id="headerContactWrap"
+                         class="btn btn-contact d-lg-inline-flex d-none  align-items-center fw-400 ml-3 position-relative">
+                        Связаться с нами
+                        <div id="headerContactContent" class="contact-dropdown text-left fw-400">
+                            <ul class="contact__list list-unstyled fz-small dark-grey-color">
+                                <li class="contact__list-item contact__list-item--first d-flex flex-wrap position-relative">
+                                    <div class="contact__icon-wrap d-flex align-items-center justify-content-center">
+                                        <img src="images/icon4.svg" alt="">
+                                    </div>
+                                    <div class="contact__text-wrap">
+                                        <span class="contact__list-heading black-color fw-500 d-block">Напишите нам:</span>
+                                        <span>Команда техподдержки доступна в режиме 24/7</span>
+                                    </div>
+                                    <a href="#" class="pseudo-link"></a>
+                                </li>
+                                <li class="contact__list-item d-flex flex-wrap position-relative">
+                                    <div class="contact__icon-wrap d-flex align-items-center justify-content-center">
+                                        <img src="images/icon5.svg" alt="">
+                                    </div>
+                                    <div class="contact__text-wrap">
+                                        <span class="contact__list-heading black-color fw-500 d-block">Отдел продаж:</span>
+                                        <span class="d-block">Пн-Пт, с 10-00 до 19-00</span>
+                                        <span>Тел. <a href="tel:74951080676">+7 495 108 06 76</a>, <a
+                                                href="mailto:sales@king-servers.com">sales@king-servers.com</a></span>
+                                    </div>
+                                </li>
+                                <li class="contact__list-item d-flex flex-wrap position-relative">
+                                    <div class="contact__icon-wrap d-flex align-items-center justify-content-center">
+                                        <img src="images/icon6.svg" alt="">
+                                    </div>
+                                    <div class="contact__text-wrap">
+                                        <span class="contact__list-heading black-color fw-500 d-block">Юридические данные:</span>
+                                        <span>Регистрационные данные и лицензия на<br> предоставление услуг</span>
+                                    </div>
+                                    <a href="#" class="pseudo-link"></a>
+                                </li>
+                            </ul>
+                            <a href="#"
+                               class="btn btn-dropdown-telegram d-lg-inline-block d-none fw-400 fz-small position-relative">
+                                <img src="images/icon2.svg" alt="">
+                                <span>Связаться через Telegram-чат</span>
+                            </a>
+                        </div>
+                    </div>
+                    <ul class="header__social-list position-relative fz-small list-unstyled mb-0 d-lg-flex d-none flex-wrap align-items-center">
+                        <li>
+                            <a href="#"
+                               class="header__social-link header__social-link--facebook d-inline-flex align-items-center justify-content-center main-transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                               class="header__social-link header__social-link--twitter d-inline-flex align-items-center justify-content-center main-transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                               class="header__social-link header__social-link--vk d-inline-flex align-items-center justify-content-center main-transition">
+                                <i class="fab fa-vk"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="#"
+                       class="btn btn-control path-transition d-inline-flex align-items-center ml-lg-3 mr-lg-1 fw-500">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.9997 2.6068C6.37163 2.6068 2.60645 6.37198 2.60645 11C2.60645 13.2419 3.47948 15.3497 5.06473 16.9349L5.5205 17.3907L7.3187 15.5925L6.4072 14.681L5.54078 15.5474C4.61201 14.4364 4.05234 13.084 3.92404 11.6417H5.32134V10.3526H3.92529C4.05913 8.87809 4.64518 7.5323 5.54362 6.45551L6.40716 7.31905L7.31866 6.40755L6.45511 5.54401C7.53264 4.64498 8.8795 4.05875 10.3551 3.92542V5.26343H11.6442V3.92538C13.1198 4.05871 14.4667 4.64493 15.5442 5.54401L14.6807 6.40755L15.5922 7.31905L16.4557 6.45551C17.3547 7.53303 17.9409 8.87985 18.0743 10.3555H16.8499V11.6445H18.075C17.9462 13.0858 17.3867 14.4372 16.4585 15.5474L15.5922 14.681L14.6807 15.5925L16.4788 17.3907L16.9345 16.9349C18.5198 15.3496 19.3929 13.2419 19.3929 11C19.3929 6.37198 15.6277 2.6068 10.9997 2.6068V2.6068Z"
+                                  fill="white"/>
+                            <path d="M18.7782 3.2218C16.7005 1.14421 13.9382 0 11 0C8.0618 0 5.29947 1.14421 3.2218 3.2218C1.14421 5.29947 0 8.0618 0 11C0 13.9382 1.14421 16.7005 3.2218 18.7782C5.29947 20.8558 8.0618 22 11 22C13.9382 22 16.7005 20.8558 18.7782 18.7782C20.8558 16.7005 22 13.9382 22 11C22 8.0618 20.8558 5.29947 18.7782 3.2218V3.2218ZM8.41448 20.3609L9.37462 18.5911H12.6254L13.5855 20.3609C12.7619 20.5886 11.895 20.7109 11 20.7109C10.105 20.7109 9.23807 20.5886 8.41448 20.3609V20.3609ZM14.8175 19.9286L13.3926 17.3021H8.60741L7.18248 19.9286C3.72032 18.4426 1.28906 15 1.28906 11C1.28906 5.64536 5.64536 1.28906 11 1.28906C16.3546 1.28906 20.7109 5.64536 20.7109 11C20.7109 15 18.2797 18.4426 14.8175 19.9286Z"
+                                  fill="white"/>
+                            <path d="M11.6445 10.4502V6.86328H10.3554V10.4502C9.47104 10.7254 8.82715 11.5517 8.82715 12.5254C8.82715 13.7235 9.8019 14.6982 11 14.6982C12.198 14.6982 13.1728 13.7235 13.1728 12.5254C13.1728 11.5517 12.5289 10.7254 11.6445 10.4502ZM11 13.4092C10.5126 13.4092 10.1162 13.0127 10.1162 12.5254C10.1162 12.0381 10.5127 11.6417 11 11.6417C11.4872 11.6417 11.8837 12.0381 11.8837 12.5254C11.8837 13.0127 11.4873 13.4092 11 13.4092Z"
+                                  fill="white"/>
+                        </svg>
+                        <span class="d-lg-inline-block d-none ml-3 pl-xl-1">Панель управления</span>
+                    </a>
+                    <a href="#"
+                       class="btn btn-language d-lg-inline-flex d-none align-items-center justify-content-center ml-2">
+                        <img src="images/icon-usa.svg" alt="">
+                    </a>
+                    <div class="btn btn-mobile d-lg-none">
+                        <span class="main-transition"></span>
+                        <span class="main-transition"></span>
+                        <span class="main-transition"></span>
+                    </div>
+                </div>
+            </div>
+            <ul class="header__down-wrap header__nav position-static justify-content-between list-unstyled col-12 px-lg-3 px-0 row m-0 text-lg-center">
+                <li class="header__nav-item">
+                    <a href="#" class="header__nav-item-link active">VPS/VDS серверы</a>
+                </li>
+                <li class="header__nav-item ">
+                    <a href="#" class="header__nav-item-link header__nav-item-link--no-border">Выделенные серверы</a>
+                    <div class="header__nav-dropdown main-transition d-lg-block d-none">
+                        <div class="container">
+                            <div class="row align-items-center mx-0">
+                                <div class="header__nav-description text-left">
+                                    <h6 class="d-block fw-700">ВЫДЕЛЕННЫЕ СЕРВЕРЫ</h6>
+                                    <span class="d-block">DEDICATED SERVER</span>
+                                    <p class="fz-small mb-0">Альтернативный хостинг в тех случаях, когда клиентам
+                                        недостаточно ресурсов виртуального хостинга или виртуальных выделенных серверов
+                                        VDS/VPS. В наших серверах используются исключительно серверные
+                                        комплектующие.</p>
+                                </div>
+                                <ul class="header__nav-list flex-wrap list-unstyled d-flex justify-content-between">
+                                    <li class="header__nav-list-item mb-xl-0 mb-3">
+                                        <a href="#"
+                                           class="header__nav-list-link position-relative d-block text-left mb-3">Выделенные
+                                            серверы</a>
+                                        <a href="#" class="btn btn-free btn-sale">Попробовать бесплатно</a>
+                                    </li>
+                                    <li class="header__nav-list-item mb-xl-0 mb-3">
+                                        <a href="#"
+                                           class="header__nav-list-link position-relative d-block text-left mb-3">Распродажа
+                                            серверов</a>
+                                        <a href="#" class="btn btn-free btn-sale">Попробовать бесплатно</a>
+                                    </li>
+                                    <li class="header__nav-list-item">
+                                        <a href="#"
+                                           class="header__nav-list-link position-relative d-block text-left mb-3">Серверы
+                                            с защитой от DDoS</a>
+                                        <a href="#" class="btn btn-free btn-sale">Попробовать бесплатно</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="header__nav-item d-lg-none">
+                    <a href="#" class="header__nav-item-link header__nav-item-link--sale">
+                        <img src="images/icon1.svg" alt="" class="mr-1">
+                        <span>Распродажа серверов</span>
+                    </a>
+                </li>
+                <li class="header__nav-item d-lg-block d-none">
+                    <a href="#" class="header__nav-item-link">Защита и хранение данных</a>
+                    <div class="header__nav-dropdown main-transition">
+                        <div class="container">
+                            <div class="row align-items-center mx-0">
+                                <div class="header__nav-description text-left">
+                                    <h6 class="d-block fw-700">ЗАЩИТА И ХРАНЕНИЕ ДАННЫХ</h6>
+                                    <span class="d-block">DATA STORAGE AND SECURITY</span>
+                                    <p class="fz-small mb-0">Услуги по хранению данных и защита от DDoS необходимы для
+                                        бизнеса, которому требуется масштабируемое надежное хранилище и наивысшая
+                                        безопасность.</p>
+                                </div>
+                                <ul class="header__nav-list flex-wrap list-unstyled d-flex justify-content-between">
+                                    <li class="header__nav-list-item mb-xl-0 mb-3">
+                                        <a href="#"
+                                           class="header__nav-list-link position-relative d-block text-left mb-3">Защита
+                                            Anti-DDoS</a>
+                                        <a href="#" class="btn btn-free btn-sale">Попробовать бесплатно</a>
+                                    </li>
+                                    <li class="header__nav-list-item mb-xl-0 mb-3">
+                                        <a href="#"
+                                           class="header__nav-list-link position-relative d-block text-left mb-3">Хранение
+                                            данных</a>
+                                        <a href="#" class="btn btn-free btn-sale">Попробовать бесплатно</a>
+                                    </li>
+                                    <li class="header__nav-list-item">
+                                        <a href="#"
+                                           class="header__nav-list-link position-relative d-block text-left mb-3">Серверы
+                                            хранения</a>
+                                        <a href="#" class="btn btn-free btn-sale">Попробовать бесплатно</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="header__nav-item d-lg-none">
+                    <a href="#" class="header__nav-item-link">Защита Anti-DDoS</a>
+                </li>
+                <li class="header__nav-item d-lg-none">
+                    <a href="#" class="header__nav-item-link">Серверы хранения</a>
+                </li>
+                <li class="header__nav-item d-lg-none">
+                    <a href="#" class="header__nav-item-link">Хранение данных</a>
+                </li>
+                <li id="headerContactWrapMobile" class="header__nav-item d-lg-none">
+                    <a href="#" class="header__nav-item-link header__nav-item-link--accordion position-relative">Связаться
+                        с нами</a>
+                </li>
+                <li class="header__nav-item d-lg-none">
+                    <a href="#" class="header__nav-item-link">Отзывы клиентов</a>
+                </li>
+                <li class="header__nav-item d-lg-block d-none">
+                    <a href="#" class="header__nav-item-link">О компании</a>
+                    <div class="header__nav-dropdown main-transition">
+                        <div class="container">
+                            <div class="row align-items-center mx-0">
+                                <div class="header__nav-description text-left">
+                                    <h6 class="d-block fw-700">О КОМПАНИИ</h6>
+                                    <span class="d-block">ABOUT US</span>
+                                    <p class="fz-small mb-0">Мы предлагаем клиентам высококачественный сервис и
+                                        выстраиваем долгосрочные отношения, основанные на доверии.</p>
+                                </div>
+                                <ul class="header__nav-list flex-wrap list-unstyled d-flex justify-content-between">
+                                    <li class="header__nav-list-item mb-xl-0 mb-3">
+                                        <a href="#"
+                                           class="header__nav-list-link position-relative d-block text-left">Контакты</a>
+                                    </li>
+                                    <li class="header__nav-list-item mb-xl-0 mb-3">
+                                        <a href="#"
+                                           class="header__nav-list-link position-relative d-block text-left">Блог</a>
+                                    </li>
+                                    <li class="header__nav-list-item">
+                                        <a href="#"
+                                           class="header__nav-list-link position-relative d-block text-left">Отзывы</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="header__nav-item fz-null header__nav-item-link d-lg-none">
+                    <a href="#"
+                       class="btn btn-language btn-language--en position-relative fz-small fw-400 mr-2">English</a>
+                    <a href="#" class="btn btn-language active btn-language--ru position-relative fz-small fw-400 ml-2">Русский</a>
+                </li>
+                <li class="header__nav-item  header__nav-item--mob-last fz-null header__nav-item-link header__nav-item-link--no-border d-lg-none">
+                    <a href="#" class="btn btn-contact position-relative mr-2 fw-400">Telegram-чат</a>
+                    <ul class="header__social-list list-unstyled fz-small text-white mb-0 d-inline-flex flex-wrap align-items-center justify-content-end ml-2">
+                        <li>
+                            <a href="#"
+                               class="header__social-link header__social-link--facebook d-inline-flex align-items-center justify-content-center main-transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                               class="header__social-link header__social-link--twitter d-inline-flex align-items-center justify-content-center main-transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="mr-0">
+                            <a href="#"
+                               class="header__social-link header__social-link--vk d-inline-flex align-items-center justify-content-center main-transition">
+                                <i class="fab fa-vk"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="hero text-white text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-12 mx-lg-auto">
+                    <ul class="breadcrumbs fz-small mb-4 pb-lg-1 list-unstyled justify-content-center d-flex flex-wrap">
+                        <li class="position-relative">
+                            <a href="#">Сервисы</a>
+                        </li>
+                        <li class="position-relative li--last">
+                            <a href="#">Проверить скорость интернета</a>
+                        </li>
+                    </ul>
+                    <h1 class="mb-2 pb-lg-1">Проверить скорость интернета</h1>
+                    <div class="hero__subheading">
+                        C помощью нашего сервиса Speed test можно удобно проверить скорость интернет-<br>соединения, который работает без Flash и сторонних плагинов.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="info-ip speedtest">
+        <div class="container mobile-container">
+            <div class="row">
+                <div class="col-lg-10 col-12 mx-auto c-px-6 info-ip__content-wrap">
+                    <div class="info-ip__ip-details-wrap speedtest__gauge-wrap d-flex align-items-center flex-wrap dark-grey-color">
+                        <div class="gauge position-relative fz-small mx-lg-0 mx-auto mb-lg-0 mb-3">
+                            <div class="gauge__value gauge__value--1 main-transition position-absolute">0</div>
+                            <div class="gauge__value gauge__value--2 main-transition position-absolute">1</div>
+                            <div class="gauge__value gauge__value--3 main-transition position-absolute">5</div>
+                            <div class="gauge__value gauge__value--4 main-transition position-absolute">10</div>
+                            <div class="gauge__value gauge__value--5 main-transition position-absolute">20</div>
+                            <div class="gauge__value gauge__value--6 main-transition position-absolute">30</div>
+                            <div class="gauge__value gauge__value--7 main-transition position-absolute">50</div>
+                            <div class="gauge__value gauge__value--8 main-transition position-absolute">75</div>
+                            <div class="gauge__value gauge__value--9 main-transition position-absolute">100</div>
+                            <a href="#" class="btn btn-main btn-start-gauge btn-start-gauge--js position-absolute">
+                                <span class="btn-main__text">Начать тест</span>
+                            </a>
+                            <div class="gauge__result main-transition fw-500 position-absolute text-center">
+                                <div class="dark-grey-color gauge__result-name text-uppercase mb-1">
+                                    uploading...
+                                </div>
+                                <div class="">
+                                    <span class="h1 d-inline-block gauge__result--js mb-0 fw-600"></span> Mbps
+                                </div>
+                            </div>
+                            <svg class="gauge__path" width="318" height="275" viewBox="0 0 318 275" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M56.2406 266.947C-44.7599 167.947 28.7402 8 158.47 8C291.741 8 361.741 168.447 262.241 266.947" stroke="#F8F9FB" stroke-width="16" stroke-linecap="round"/>
+                            </svg>
+                            <svg class="gauge__progress" width="318" height="286" viewBox="0 0 318 286" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <mask id="mask0_1857_3108" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="318" height="275">
+                                    <path class="gauge__progress--path" d="M56.2406 266.947C-44.7599 167.947 28.7402 8 158.47 8C291.741 8 361.741 168.447 262.241 266.947" stroke="#F8F9FB" stroke-width="16" stroke-linecap="round"/>
+                                </mask>
+                                <g mask="url(#mask0_1857_3108)">
+                                    <rect x="-2" y="-9" width="321" height="301" fill="url(#pattern0)"/>
+                                </g>
+                                <g class="gauge__progress--circle" filter="url(#filter0_d_1857_3108)">
+                                    <circle cx="261.241" cy="267.947" r="10" fill="white"/>
+                                </g>
+                                <defs>
+                                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                        <use xlink:href="#image0_1857_3108" transform="scale(0.00311526 0.00332226)"/>
+                                    </pattern>
+                                    <filter id="filter0_d_1857_3108" x="243.241" y="249.947" width="36" height="36" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                        <feOffset/>
+                                        <feGaussianBlur stdDeviation="4"/>
+                                        <feColorMatrix type="matrix" values="0 0 0 0 0.0611111 0 0 0 0 0.0634921 0 0 0 0 0.0666667 0 0 0 0.12 0"/>
+                                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1857_3108"/>
+                                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1857_3108" result="shape"/>
+                                    </filter>
+                                    <image id="image0_1857_3108" width="321" height="301" xlink:href="images/ellipse-path-image.png"/>
+                                </defs>
+                            </svg>
+                        </div>
+                        <ul class="speedtest__info-wrap d-flex list-unstyled flex-wrap">
+                            <li class="col-sm-6 col-12">
+                                <div class="speedtest__info-heading d-flex">
+                                    <img src="images/icon8.svg" alt="" class="mr-1">
+                                    <span>Download</span>
+                                </div>
+                                <div class="speedtest__info-subheading">0.00Mbps</div>
+                            </li>
+                            <li class="col-sm-6 col-12">
+                                <div class="speedtest__info-heading d-flex">
+                                    <img src="images/icon9.svg" alt="" class="mr-1">
+                                    <span>Connections</span>
+                                </div>
+                                <div class="speedtest__info-subheading">Multi</div>
+                            </li>
+                            <li class="col-sm-6 col-12">
+                                <div class="speedtest__info-heading d-flex">
+                                    <img src="images/icon10.svg" alt="" class="mr-1">
+                                    <span>Upload</span>
+                                </div>
+                                <div class="speedtest__info-subheading">0.00Mbps</div>
+                            </li>
+                            <li class="col-sm-6 col-12">
+                                <div class="speedtest__info-heading d-flex">
+                                    <img src="images/icon11.svg" alt="" class="mr-1">
+                                    <span>185.159.81.168</span>
+                                </div>
+                                <div class="speedtest__info-subheading">Hosting Solutions</div>
+                            </li>
+                            <li class="col-sm-6 col-12">
+                                <div class="speedtest__info-heading d-flex">
+                                    <img src="images/icon12.svg" alt="" class="mr-1">
+                                    <span>Ping</span>
+                                </div>
+                                <div class="speedtest__info-subheading">0ms</div>
+                            </li>
+                            <li class="col-sm-6 col-12">
+                                <div class="speedtest__info-heading d-flex">
+                                    <img src="images/icon13.svg" alt="" class="mr-1">
+                                    <span>Server Location</span>
+                                </div>
+                                <div class="speedtest__info-subheading">Not Detected</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="info-ip__ip-details-wrap speedtest__info-result-wrap mb-0">
+                        <div class="info-ip__heading">Результаты теста</div>
+                        <ul class="info-ip__info-wrap fz-small d-flex flex-wrap list-unstyled mb-lg-4 mb-3 pb-lg-1">
+                            <li class="info-ip__info info-ip__info--top d-flex justify-content-between">
+                                <span class="info-ip__info-item-name dark-grey-color fw-500 c-pr-3">
+                                    <img src="images/icon8.svg" alt="">
+                                    <span>Download</span>
+                                </span>
+                                <span class="info-ip__info-item-value text-right">46.24Mbps</span>
+                            </li>
+                            <li class="info-ip__info info-ip__info--sm-top d-flex justify-content-between">
+                                <span class="info-ip__info-item-name dark-grey-color fw-500 c-pr-3">
+                                    <img src="images/icon9.svg" alt="">
+                                    <span>Connections</span>
+                                </span>
+                                <span class="info-ip__info-item-value text-right">Multi</span>
+                            </li>
+                            <li class="info-ip__info d-flex justify-content-between">
+                                <span class="info-ip__info-item-name dark-grey-color fw-500 c-pr-3">
+                                    <img src="images/icon10.svg" alt="">
+                                    <span>Upload</span>
+                                </span>
+                                <span class="info-ip__info-item-value text-right">30.18Mbps</span>
+                            </li>
+                            <li class="info-ip__info d-flex justify-content-between">
+                                <span class="info-ip__info-item-name dark-grey-color fw-500 c-pr-3">
+                                    <img src="images/icon11.svg" alt="">
+                                    <span>Your Location</span>
+                                </span>
+                                <span class="info-ip__info-item-value text-right">Hosting Solutions, 185.159.81.168</span>
+                            </li>
+                            <li class="info-ip__info d-flex justify-content-between">
+                                <span class="info-ip__info-item-name dark-grey-color fw-500 c-pr-3">
+                                    <img src="images/icon12.svg" alt="">
+                                    <span>Ping</span>
+                                </span>
+                                <span class="info-ip__info-item-value text-right">24ms</span>
+                            </li>
+                            <li class="info-ip__info d-flex justify-content-between">
+                                <span class="info-ip__info-item-name dark-grey-color fw-500 c-pr-3">
+                                    <img src="images/icon13.svg" alt="">
+                                    <span>Server</span>
+                                </span>
+                                <span class="info-ip__info-item-value text-right">WorldStream B.V., Amsterdam</span>
+                            </li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="#" class="btn btn-main btn-start-gauge--js">
+                                <span class="btn-main__text">начать заново</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-12 mx-auto c-px-6 info-ip__additional-content">
+                    <h2 class="info-ip__section-heading text-center">Дополнительные сервисы</h2>
+                    <div class="row additional-services__wrap">
+                        <div class="col-xl-3 col-sm-6 col-12 mb-xl-0 mb-3 additional-services__link-wrap text-left fz-small">
+                            <div class="additional-services__link position-relative d-flex flex-wrap align-items-center h-100">
+                                <div class="additional-services__image-wrap">
+                                    <img src="images/Geo-IP.svg" alt="">
+                                </div>
+                                <div class="additional-services__about fw-500">Geo IP — узнайте местоположение по
+                                    IP
+                                </div>
+                                <a href="/05.3.GeoIP.html" class="pseudo-link"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 col-12 mb-xl-0 mb-3 additional-services__link-wrap text-left fz-small">
+                            <div class="additional-services__link position-relative d-flex flex-wrap align-items-center h-100">
+                                <div class="additional-services__image-wrap">
+                                    <img src="images/DNS-Icon.svg" alt="">
+                                </div>
+                                <div class="additional-services__about fw-500">Проверка DNS-записей домена</div>
+                                <a href="/04.2.DNS-Records-Results.html" class="pseudo-link"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 col-12 mb-xl-0 mb-3 additional-services__link-wrap text-left fz-small">
+                            <div class="additional-services__link position-relative d-flex flex-wrap align-items-center h-100">
+                                <div class="additional-services__image-wrap">
+                                    <img src="images/IP-Icons.svg" alt="">
+                                </div>
+                                <div class="additional-services__about fw-500">Узнай свой IP-адрес</div>
+                                <a href="/06.Your-IP-address.html" class="pseudo-link"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 col-12 mb-xl-0 mb-3 additional-services__link-wrap text-left fz-small">
+                            <div class="additional-services__link position-relative d-flex flex-wrap align-items-center h-100">
+                                <div class="additional-services__image-wrap">
+                                    <img src="images/Speedtest.svg" alt="">
+                                </div>
+                                <div class="additional-services__about fw-500">Проверить скорость интернета</div>
+                                <a href="/07.1.Speedtest.html" class="pseudo-link"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="info-ip__section-heading text-center">Остались вопросы?</h2>
+                    <div class="info-ip__faq-wrap">
+                        <div class="accordion-group">
+                            <div class="accordion-wrap accordion-wrap--first">
+                                <h4 class="accordion-title accordion-title-click position-relative active">Что такое маска подсети?</h4>
+                                <div class="accordion-content">
+                                    <p>Чтобы понять, что такое маска подсети сначала нужно узнать, что такое IP-адрес — это идентификатор каждого устройства, которое подключается к сети, чтобы они могли взаимодействовать друг с другом. IP-адрес выглядит как строка чисел, разделенных точками, например, 172.16.81.100.</p>
+                                    <p>Маска подсети тоже число, но она определяет диапазон IP-адресов, которые может использовать сеть. С её помощью сети могут делиться на небольшие подсети, которые подключаются к интернету. Проще говоря, задача маски подсети — скрыть сетевой элемент адреса, чтобы видимым остался только элемент хоста. Выглядит маска вот так: 255.255.255.0. Но маска подсети не является частью IP-пакета, поэтому при расшифровке IP-адреса онлайн это число отображаться не будет.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-wrap">
+                                <h4 class="accordion-title accordion-title-click position-relative">Зачем нужен сервис Geo IP?</h4>
+                                <div class="accordion-content">
+                                    <p>Чтобы понять, что такое маска подсети сначала нужно узнать, что такое IP-адрес — это идентификатор каждого устройства, которое подключается к сети, чтобы они могли взаимодействовать друг с другом. IP-адрес выглядит как строка чисел, разделенных точками, например, 172.16.81.100.</p>
+                                    <p>Маска подсети тоже число, но она определяет диапазон IP-адресов, которые может использовать сеть. С её помощью сети могут делиться на небольшие подсети, которые подключаются к интернету. Проще говоря, задача маски подсети — скрыть сетевой элемент адреса, чтобы видимым остался только элемент хоста. Выглядит маска вот так: 255.255.255.0. Но маска подсети не является частью IP-пакета, поэтому при расшифровке IP-адреса онлайн это число отображаться не будет.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-wrap">
+                                <h4 class="accordion-title accordion-title-click position-relative">Как узнать адрес по IP-адресу?</h4>
+                                <div class="accordion-content">
+                                    <p>Чтобы понять, что такое маска подсети сначала нужно узнать, что такое IP-адрес — это идентификатор каждого устройства, которое подключается к сети, чтобы они могли взаимодействовать друг с другом. IP-адрес выглядит как строка чисел, разделенных точками, например, 172.16.81.100.</p>
+                                    <p>Маска подсети тоже число, но она определяет диапазон IP-адресов, которые может использовать сеть. С её помощью сети могут делиться на небольшие подсети, которые подключаются к интернету. Проще говоря, задача маски подсети — скрыть сетевой элемент адреса, чтобы видимым остался только элемент хоста. Выглядит маска вот так: 255.255.255.0. Но маска подсети не является частью IP-пакета, поэтому при расшифровке IP-адреса онлайн это число отображаться не будет.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-wrap">
+                                <h4 class="accordion-title accordion-title-click position-relative">Почему геолокация определяется неточно?</h4>
+                                <div class="accordion-content">
+                                    <p>Чтобы понять, что такое маска подсети сначала нужно узнать, что такое IP-адрес — это идентификатор каждого устройства, которое подключается к сети, чтобы они могли взаимодействовать друг с другом. IP-адрес выглядит как строка чисел, разделенных точками, например, 172.16.81.100.</p>
+                                    <p>Маска подсети тоже число, но она определяет диапазон IP-адресов, которые может использовать сеть. С её помощью сети могут делиться на небольшие подсети, которые подключаются к интернету. Проще говоря, задача маски подсети — скрыть сетевой элемент адреса, чтобы видимым остался только элемент хоста. Выглядит маска вот так: 255.255.255.0. Но маска подсети не является частью IP-пакета, поэтому при расшифровке IP-адреса онлайн это число отображаться не будет.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-wrap">
+                                <h4 class="accordion-title accordion-title-click position-relative">Почему сервис не отображает геолокацию?</h4>
+                                <div class="accordion-content">
+                                    <p>Чтобы понять, что такое маска подсети сначала нужно узнать, что такое IP-адрес — это идентификатор каждого устройства, которое подключается к сети, чтобы они могли взаимодействовать друг с другом. IP-адрес выглядит как строка чисел, разделенных точками, например, 172.16.81.100.</p>
+                                    <p>Маска подсети тоже число, но она определяет диапазон IP-адресов, которые может использовать сеть. С её помощью сети могут делиться на небольшие подсети, которые подключаются к интернету. Проще говоря, задача маски подсети — скрыть сетевой элемент адреса, чтобы видимым остался только элемент хоста. Выглядит маска вот так: 255.255.255.0. Но маска подсети не является частью IP-пакета, поэтому при расшифровке IP-адреса онлайн это число отображаться не будет.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="js/jquery.js"></script>
+<script src="js/gsap.min.js"></script>
+<script src="js/DrawSVGPlugin.min.js"></script>
+<script src="js/MotionPathHelper.min.js"></script>
+<script src="js/MotionPathPlugin.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

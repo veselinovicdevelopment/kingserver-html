@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04.2.DNS Records Results</title>
+    <script src="https://kit.fontawesome.com/b92da27cc9.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.new.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<? include 'header.php'; ?>
+<main>
+    <section class="hero text-white text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-12 mx-auto">
+                    <ul class="breadcrumbs fz-small mb-4 pb-lg-1 list-unstyled justify-content-center d-flex flex-wrap">
+                        <li class="position-relative">
+                            <a href="#">Сервисы</a>
+                        </li>
+                        <li class="position-relative li--last">
+                            <a href="#">Проверка DNS-записей домена</a>
+                        </li>
+                    </ul>
+                    <h1 class="mb-2 pb-lg-1">Проверка DNS-записей домена</h1>
+                    <div class="hero__subheading">Хотите узнать DNS параметры домена? Это просто! Введите
+                        его в поле<br> ниже и нажмите "Проверить".
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section info-ip">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-12 mx-auto info-ip__content-wrap">
+                    <div class="info-ip__ip-details-wrap">
+                        <form class="d-flex flex-wrap info-ip__form info-ip__form-row fz-small">
+                            <div class="form-group-third">
+                                <label class="d-block mb-2 fw-500">Домен</label>
+                                <input type="text" placeholder="Picflip.io">
+                            </div>
+                            <div class="form-group-third">
+                                <label class="d-block mb-2 fw-500">Тип записи</label>
+                                <div class="form-group-select position-relative">
+                                    <select>
+                                        <option selected>ANY</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group-third">
+                                <label class="d-block mb-2 fw-500">DNS сервер</label>
+                                <input type="text" placeholder="8.8.8.8.">
+                            </div>
+                            <div class="info-ip__form-down-wrap d-flex flex-wrap align-items-center justify-content-between">
+                                <div class="info-ip__form-down__checkbox-wrap mb-md-0 mb-3 d-flex flex-wrap">
+                                    <label class="checkbox">
+                                        <input type="checkbox"/>
+                                        <div class="checkbox__text">С трассировкой</div>
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox"/>
+                                        <div class="checkbox__text">Текстовый ответ</div>
+                                    </label>
+                                </div>
+                                <div class="">
+                                    <button type="submit" class="btn btn-main">
+                                        <span class="btn-main__text">проверить</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dns-result__wrap fz-small">
+                        <div class="info-ip__heading">Результат проверки</div>
+                        <div class="dns-result__rows">
+                            <div class="dns-result__row dns-result__row--header row flex-nowrap mx-0">
+                                <div class="pr-3 dns-result__column1">Домен</div>
+                                <div class="pr-3 dns-result__column2">TTL</div>
+                                <div class="pr-3 dns-result__column3">Тип</div>
+                                <div class="pr-3 dns-result__column4">Результат</div>
+                                <div class="pr-3 dns-result__column5">Ответ от сервера</div>
+                            </div>
+                            <div class="dns-result__row row flex-nowrap mx-0">
+                                <div class="pr-3 dns-result__column1">Picflip.io</div>
+                                <div class="pr-3 dns-result__column2">21600</div>
+                                <div class="pr-3 dns-result__column3">MX 2</div>
+                                <div class="pr-3 dns-result__column4">
+                                    "google-site-verification=glkkJPP1_mEtZpgVvRDVXhR-92kEwUqc-KArULrdY7I"
+                                </div>
+                                <div class="dns-result__column5">8.8.8.8 (57 msec)</div>
+                            </div>
+                            <div class="dns-result__row row flex-nowrap mx-0">
+                                <div class="pr-3 dns-result__column1">Picflip.io</div>
+                                <div class="pr-3 dns-result__column2">21600</div>
+                                <div class="pr-3 dns-result__column3">MX 10</div>
+                                <div class="pr-3 dns-result__column4">alt1.aspmx.l.google.com</div>
+                                <div class="pr-3 dns-result__column5">8.8.8.8 (57 msec)</div>
+                            </div>
+                            <div class="dns-result__row row flex-nowrap mx-0">
+                                <div class="pr-3 dns-result__column1">Picflip.io</div>
+                                <div class="pr-3 dns-result__column2">21600</div>
+                                <div class="pr-3 dns-result__column3">MX 20</div>
+                                <div class="pr-3 dns-result__column4">alt2.aspmx.l.google.com</div>
+                                <div class="pr-3 dns-result__column5">8.8.8.8 (57 msec)</div>
+                            </div>
+                            <div class="dns-result__row row flex-nowrap mx-0">
+                                <div class="pr-3 dns-result__column1">Picflip.io</div>
+                                <div class="pr-3 dns-result__column2">21600</div>
+                                <div class="pr-3 dns-result__column3">SOA</div>
+                                <div class="pr-3 dns-result__column4">ns-cloud-e3.googledomains.com</div>
+                                <div class="pr-3 dns-result__column5">8.8.8.8 (57 msec)</div>
+                            </div>
+                            <div class="dns-result__row row flex-nowrap mx-0">
+                                <div class="pr-3 dns-result__column1">Picflip.io</div>
+                                <div class="pr-3 dns-result__column2">21600</div>
+                                <div class="pr-3 dns-result__column3">MX 2</div>
+                                <div class="pr-3 dns-result__column4">ns-cloud-e4.googledomains.com</div>
+                                <div class="pr-3 dns-result__column5">8.8.8.8 (57 msec)</div>
+                            </div>
+                            <div class="dns-result__row row flex-nowrap mx-0">
+                                <div class="pr-3 dns-result__column1">Picflip.io</div>
+                                <div class="pr-3 dns-result__column2">21600</div>
+                                <div class="pr-3 dns-result__column3">MX 2</div>
+                                <div class="pr-3 dns-result__column4">34.117.59.81<br>81.59.117.34.bc.googleusercontent.com
+                                </div>
+                                <div class="pr-3 dns-result__column5">8.8.8.8 (57 msec)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-12 mx-lg-auto info-ip__additional-content">
+                    <h2 class="info-ip__section-heading text-center">Дополнительные сервисы</h2>
+                    <div class="row additional-services__wrap">
+                        <div class="col-xl-3 col-sm-6 col-12 mb-xl-0 mb-3 additional-services__link-wrap text-left fz-small">
+                            <div class="additional-services__link position-relative d-flex flex-wrap align-items-center h-100">
+                                <div class="additional-services__image-wrap">
+                                    <img src="images/Geo-IP.svg" alt="">
+                                </div>
+                                <div class="additional-services__about fw-500">Geo IP — узнайте местоположение по
+                                    IP
+                                </div>
+                                <a href="/05.3.GeoIP.html" class="pseudo-link"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 col-12 mb-xl-0 mb-3 additional-services__link-wrap text-left fz-small">
+                            <div class="additional-services__link position-relative d-flex flex-wrap align-items-center h-100">
+                                <div class="additional-services__image-wrap">
+                                    <img src="images/DNS-Icon.svg" alt="">
+                                </div>
+                                <div class="additional-services__about fw-500">Проверка DNS-записей домена</div>
+                                <a href="/04.2.DNS-Records-Results.html" class="pseudo-link"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 col-12 mb-xl-0 mb-3 additional-services__link-wrap text-left fz-small">
+                            <div class="additional-services__link position-relative d-flex flex-wrap align-items-center h-100">
+                                <div class="additional-services__image-wrap">
+                                    <img src="images/IP-Icons.svg" alt="">
+                                </div>
+                                <div class="additional-services__about fw-500">Узнай свой IP-адрес</div>
+                                <a href="/06.Your-IP-address.html" class="pseudo-link"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 col-12 mb-xl-0 mb-3 additional-services__link-wrap text-left fz-small">
+                            <div class="additional-services__link position-relative d-flex flex-wrap align-items-center h-100">
+                                <div class="additional-services__image-wrap">
+                                    <img src="images/Speedtest.svg" alt="">
+                                </div>
+                                <div class="additional-services__about fw-500">Проверить скорость интернета</div>
+                                <a href="/07.1.Speedtest.html" class="pseudo-link"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="info-ip__section-heading text-center">Остались вопросы?</h2>
+                    <div class="info-ip__faq-wrap pt-2">
+                        <div class="accordion-group">
+                            <div class="accordion-wrap accordion-wrap--first">
+                                <h4 class="accordion-title accordion-title-click position-relative active">Что такое маска подсети?</h4>
+                                <div class="accordion-content">
+                                    <p>Чтобы узнать, какие DNS-серверы используются для конкретного домена, введите
+                                        в поле «Домен» необходимый адрес, а все остальные поля оставьте пустыми.<br>
+                                        DNS-серверы отобразятся в NS-записях домена.<br>
+                                        Также проверка DNS-серверов сайта может быть выполнена с помощью сервиса
+                                        Whois — просто введите в него домен или IP-адрес сайта.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-wrap">
+                                <h4 class="accordion-title accordion-title-click position-relative">Что такое
+                                    утилита dig?</h4>
+                                <div class="accordion-content">
+                                    <p>Утилита dig позволяет отправлять на DNS-сервер запросы с заданными
+                                        параметрами, чтобы узнать информацию обо всех или только о некоторых
+                                        DNS-записях. Аналог dig — утилита nslookup: с её помощью тоже можно
+                                        проверить DNS-записи домена.</p>
+                                    <p>Здесь вы можете воспользоваться онлайн-версией утилиты dig. Для этого
+                                        достаточно указать нужный домен, а также дополнительные параметры (при
+                                        необходимости).</p>
+                                    <p>— В поле «Домен» введите адрес, для которого вы хотите отобразить DNS-записи.<br>—
+                                        В выпадающем списке «Тип записи» выберите нужный тип DNS-записи (по
+                                        умолчанию отображаются все доступные записи).<br>— В поле «DNS сервер»
+                                        укажите конкретный DNS-сервер, для которого вы хотите проверить DNS-записи
+                                        (опционально).</p>
+                                    <p>Если вы хотите получить подробное отображение пути следования информации в
+                                        системе DNS, отметьте галочку «С трассировкой».
+                                        Для отображения информации в текстовом виде отметьте галочку «Текстовый
+                                        ответ».</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-wrap">
+                                <h4 class="accordion-title accordion-title-click position-relative">Как посмотреть DNS-записи домена?</h4>
+                                <div class="accordion-content">
+                                    <p>Чтобы понять, что такое маска подсети сначала нужно узнать, что такое
+                                        IP-адрес — это идентификатор каждого устройства, которое подключается к
+                                        сети, чтобы они могли взаимодействовать друг с другом. IP-адрес выглядит как
+                                        строка чисел, разделенных точками, например, 172.16.81.100.</p>
+                                    <p>Маска подсети тоже число, но она определяет диапазон IP-адресов, которые
+                                        может использовать сеть. С её помощью сети могут делиться на небольшие
+                                        подсети, которые подключаются к интернету. Проще говоря, задача маски
+                                        подсети — скрыть сетевой элемент адреса, чтобы видимым остался только
+                                        элемент хоста. Выглядит маска вот так: 255.255.255.0. Но маска подсети не
+                                        является частью IP-пакета, поэтому при расшифровке IP-адреса онлайн это
+                                        число отображаться не будет.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

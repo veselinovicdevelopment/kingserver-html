@@ -1,0 +1,179 @@
+
+
+.advantages-wrap.row{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    justify-content: space-around;
+}
+.advantages-wrap .advantages{
+    /*min-width: 315px;*/
+}
+
+@media (max-width: 1389px) and (min-width: 1220px){
+    .advantages {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 395px !important;
+        text-align: left !important;
+    }
+}
+
+@media (max-width: 1319px) and (min-width: 707px){
+    .advantages {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 330px !important;
+        text-align: left !important;
+    }
+}
+
+@media (max-width: 1034px)and (min-width: 929px){
+    .advantages {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 33% !important;
+        flex: 0 0 33% !important;
+    }
+}
+
+@media (max-width: 1034px) {
+    .two-cols-section .left--col, .two-cols-section .right--col {
+        -webkit-box-flex: 0 !important;
+        -ms-flex: 0 0 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    .two-cols-section .container > div.row{
+        flex-wrap: wrap;
+    }
+
+    .articles--wrap {
+        max-width: 100% !important;
+    }
+
+    .right--col .articles--wrap a.article-item{
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+    }
+}
+
+@media (max-width: 359px) {
+    .servers-opposition{
+        flex-direction: column;
+        align-items: center;
+    }
+    .servers-opposition div {
+        padding-top: 20px;
+    }
+    .servers-opposition > img:last-child {
+        transform: inherit !important;
+    }
+}
+
+.benefits-host-review-item > h3{
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+.benefits-host-review-item > p{
+    margin-top: 0px;
+}
+.benefits-host-review-item > p.clearFix{
+    clear: both;
+    padding: 8px 0px;
+}
+
+.hide-ping-options{
+    max-height: 250px;
+    overflow: hidden;
+}
+@media (max-width: 1558px) {
+    .hide-ping-options{
+        max-height: 275px;
+    }
+}
+
+.removable {
+    font: normal 500 13px/1.38 "Avenir Next Cyr", sans-serif;
+    color: #8e8f93;
+    border-bottom: 2px dotted #8e8f93;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    display: none;
+}
+
+.opened {
+    display: inline;
+}
+.articles--wrap .title-artl{
+    font-size: 16px !important;
+}
+.articles--wrap .article-item img {
+    max-width: 80px !important;
+}
+
+.two-cols-section .container{
+    width: 90% !important;
+    max-width: 1500px !important;
+    padding: 0px !important;
+}
+
+.row {
+     margin-right: 0px !important;
+     margin-left: 0px !important;
+}
+
+.section-promo-testemonials .container{
+    width: 100% !important;
+    max-width: initial !important;
+    margin: 0 auto;
+    padding: initial !important;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-promo-testemonials .container >div:first-child{
+    width: 100% !important;
+    max-width: 1280px !important;
+    margin: 0 auto;
+    padding: 0 46px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: 0 0;
+}
+.section-promo-testemonials .container >div:last-child{
+    width: 90% !important;
+    max-width: 1500px !important;
+    margin: 0 auto;
+    padding: 18px 0 40px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: 0 0;
+}
+.card-review > .card-img > h4{
+    font-size: 16px;
+    font-family: 'Avenir Next Cyr',sans-serif;
+    -webkit-box-direction: normal;
+    position: absolute;
+    left: 100px;
+    top: 5px;
+    margin: 0px;
+    color: #bec0c7;
+    font-weight: 400;
+}
+
+.title-cf{
+    font-size: 18.72px;
+    font-family: 'Avenir Next Cyr', sans-serif;
+    -webkit-box-direction: normal;
+    color: #383d49;
+    line-height: 1.5;
+    font-weight: 500;
+    margin-bottom: 0px;
+}

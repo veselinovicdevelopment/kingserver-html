@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05.3.GeoIP</title>
+    <script src="https://kit.fontawesome.com/b92da27cc9.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.new.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="header position-relative">
+    <div class="container">
+        <div class="row ">
+            <div class="header__top-wrap col-12 row mx-0 justify-content-between align-items-center">
+                <div class="header__logo-wrap col-auto px-0">
+                    <a href="#" class="d-flex align-items-center header__logo">
+                        <img src="images/header-logo.svg" alt="" class="header__logo-image">
+                        <span class="header__logo-text-wrap">
+                            <span class="header__logo-heading fw-600 d-block mb-lg-1">KING SERVERS</span>
+                            <span class="d-lg-block d-none">Выделенные серверы VPS / VDS хостинг.</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="d-flex flex-wrap align-items-center justify-content-end col-lg-auto col-6 px-0">
+                    <a href="#" class="btn btn-sale d-inline-flex  align-items-center fw-500 discount_wrap_btn ml-0">
+                        <img src="images/icon1.svg" alt="" class="mr-lg-3">
+                        <span class="d-lg-inline-block d-none">РАСПРОДАЖА</span>
+                    </a>
+                    <div id="headerContactWrap"
+                         class="btn btn-contact d-lg-inline-flex d-none  align-items-center fw-400 ml-3 position-relative">
+                        Связаться с нами
+                        <div id="headerContactContent" class="contact-dropdown text-left fw-400">
+                            <ul class="contact__list list-unstyled fz-small dark-grey-color">
+                                <li class="contact__list-item contact__list-item--first d-flex flex-wrap position-relative">
+                                    <div class="contact__icon-wrap d-flex align-items-center justify-content-center">
+                                        <img src="images/icon4.svg" alt="">
+                                    </div>
+                                    <div class="contact__text-wrap">
+                                        <span class="contact__list-heading black-color fw-500 d-block">Напишите нам:</span>
+                                        <span>Команда техподдержки доступна в режиме 24/7</span>
+                                    </div>
+                                    <a href="#" class="pseudo-link"></a>
+                                </li>
+                                <li class="contact__list-item d-flex flex-wrap position-relative">
+                                    <div class="contact__icon-wrap d-flex align-items-center justify-content-center">
+                                        <img src="images/icon5.svg" alt="">
+                                    </div>
+                                    <div class="contact__text-wrap">
+                                        <span class="contact__list-heading black-color fw-500 d-block">Отдел продаж:</span>
+                                        <span class="d-block">Пн-Пт, с 10-00 до 19-00</span>
+                                        <span>Тел. <a href="tel:74951080676">+7 495 108 06 76</a>, <a
+                                                href="mailto:sales@king-servers.com">sales@king-servers.com</a></span>
+                                    </div>
+                                </li>
+                                <li class="contact__list-item d-flex flex-wrap position-relative">
+                                    <div class="contact__icon-wrap d-flex align-items-center justify-content-center">
+                                        <img src="images/icon6.svg" alt="">
+                                    </div>
+                                    <div class="contact__text-wrap">
+                                        <span class="contact__list-heading black-color fw-500 d-block">Юридические данные:</span>
+                                        <span>Регистрационные данные и лицензия на<br> предоставление услуг</span>
+                                    </div>
+                                    <a href="#" class="pseudo-link"></a>
+                                </li>
+                            </ul>
+                            <a href="#"
+                               class="btn btn-dropdown-telegram d-lg-inline-block d-none fw-400 fz-small position-relative">
+                                <img src="images/icon2.svg" alt="">
+                                <span>Связаться через Telegram-чат</span>
+                            </a>
+                        </div>
+                    </div>
+                    <ul class="header__social-list position-relative fz-small list-unstyled mb-0 d-lg-flex d-none flex-wrap align-items-center">
+                        <li>
+                            <a href="#"
+                               class="header__social-link header__social-link--facebook d-inline-flex align-items-center justify-content-center main-transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                               class="header__social-link header__social-link--twitter d-inline-flex align-items-center justify-content-center main-transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                               class="header__social-link header__social-link--vk d-inline-flex align-items-center justify-content-center main-transition">
+                                <i class="fab fa-vk"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="#"
+                       class="btn btn-control path-transition d-inline-flex align-items-center ml-lg-3 mr-lg-1 fw-500">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.9997 2.6068C6.37163 2.6068 2.60645 6.37198 2.60645 11C2.60645 13.2419 3.47948 15.3497 5.06473 16.9349L5.5205 17.3907L7.3187 15.5925L6.4072 14.681L5.54078 15.5474C4.61201 14.4364 4.05234 13.084 3.92404 11.6417H5.32134V10.3526H3.92529C4.05913 8.87809 4.64518 7.5323 5.54362 6.45551L6.40716 7.31905L7.31866 6.40755L6.45511 5.54401C7.53264 4.64498 8.8795 4.05875 10.3551 3.92542V5.26343H11.6442V3.92538C13.1198 4.05871 14.4667 4.64493 15.5442 5.54401L14.6807 6.40755L15.5922 7.31905L16.4557 6.45551C17.3547 7.53303 17.9409 8.87985 18.0743 10.3555H16.8499V11.6445H18.075C17.9462 13.0858 17.3867 14.4372 16.4585 15.5474L15.5922 14.681L14.6807 15.5925L16.4788 17.3907L16.9345 16.9349C18.5198 15.3496 19.3929 13.2419 19.3929 11C19.3929 6.37198 15.6277 2.6068 10.9997 2.6068V2.6068Z"
+                                  fill="white"/>
+                            <path d="M18.7782 3.2218C16.7005 1.14421 13.9382 0 11 0C8.0618 0 5.29947 1.14421 3.2218 3.2218C1.14421 5.29947 0 8.0618 0 11C0 13.9382 1.14421 16.7005 3.2218 18.7782C5.29947 20.8558 8.0618 22 11 22C13.9382 22 16.7005 20.8558 18.7782 18.7782C20.8558 16.7005 22 13.9382 22 11C22 8.0618 20.8558 5.29947 18.7782 3.2218V3.2218ZM8.41448 20.3609L9.37462 18.5911H12.6254L13.5855 20.3609C12.7619 20.5886 11.895 20.7109 11 20.7109C10.105 20.7109 9.23807 20.5886 8.41448 20.3609V20.3609ZM14.8175 19.9286L13.3926 17.3021H8.60741L7.18248 19.9286C3.72032 18.4426 1.28906 15 1.28906 11C1.28906 5.64536 5.64536 1.28906 11 1.28906C16.3546 1.28906 20.7109 5.64536 20.7109 11C20.7109 15 18.2797 18.4426 14.8175 19.9286Z"
+                                  fill="white"/>
+                            <path d="M11.6445 10.4502V6.86328H10.3554V10.4502C9.47104 10.7254 8.82715 11.5517 8.82715 12.5254C8.82715 13.7235 9.8019 14.6982 11 14.6982C12.198 14.6982 13.1728 13.7235 13.1728 12.5254C13.1728 11.5517 12.5289 10.7254 11.6445 10.4502ZM11 13.4092C10.5126 13.4092 10.1162 13.0127 10.1162 12.5254C10.1162 12.0381 10.5127 11.6417 11 11.6417C11.4872 11.6417 11.8837 12.0381 11.8837 12.5254C11.8837 13.0127 11.4873 13.4092 11 13.4092Z"
+                                  fill="white"/>
+                        </svg>
+                        <span class="d-lg-inline-block d-none ml-3 pl-xl-1">Панель управления</span>
+                    </a>
+                    <a href="#"
+                       class="btn btn-language d-lg-inline-flex d-none align-items-center justify-content-center ml-2">
+                        <img src="images/icon-usa.svg" alt="">
+                    </a>
+                    <div class="btn btn-mobile d-lg-none">
+                        <span class="main-transition"></span>
+                        <span class="main-transition"></span>
+                        <span class="main-transition"></span>
+                    </div>
+                </div>
+            </div>
+            <ul class="header__down-wrap header__nav position-static justify-content-between list-unstyled col-12 px-lg-3 px-0 row m-0 text-lg-center">
+                <li class="header__nav-item">
+                    <a href="#" class="header__nav-item-link active">VPS/VDS серверы</a>
+                </li>
+                <li class="header__nav-item ">
+                    <a href="#" class="header__nav-item-link header__nav-item-link--no-border">Выделенные серверы</a>
+                    <div class="header__nav-dropdown main-transition d-lg-block d-none">
+                        <div class="container">
+                            <div class="row align-items-center mx-0">
+                                <div class="header__nav-description text-left">
+                                    <h6 class="d-block fw-700">ВЫДЕЛЕННЫЕ СЕРВЕРЫ</h6>
+                                    <span class="d-block">DEDICATED SERVER</span>
+                                    <p class="fz-small mb-0">Альтернативный хостинг в тех случаях, когда клиентам
+                                        недостаточно ресурсов виртуального хостинга или виртуальных выделенных серверов
+                                        VDS/VPS. В наших серверах используются исключительно серверные
+                                        комплектующие.</p>
+                                </div>
+                                <ul class="header__nav-list flex-wrap list-unstyled d-flex justify-content-between">
+                                    <li class="header__nav-list-item mb-xl-0 mb-3">
+                                        <a href="#"
+                                           class="header__nav-list-link position-relative d-block text-left mb-3">Выделенные
+                                            серверы</a>
+                                        <a href="#" class="btn btn-free btn-sale">Попробовать бесплатно</a>
+                                    </li>
+                                    <li class="header__nav-list-item mb-xl-0 mb-3">
+                                        <a href="#"
+                                           class="header__nav-list-link position-relative d-block text-left mb-3">Распродажа
+                                            серверов</a>
+                                        <a href="#" class="btn btn-free btn-sale">Попробовать бесплатно</a>
+                                    </li>
+                                    <li class="header__nav-list-item">
+                                        <a href="#"
+                                           class="header__nav-list-link position-relative d-block text-left mb-3">Серверы
+                                            с защитой от DDoS</a>
+                                        <a href="#" class="btn btn-free btn-sale">Попробовать бесплатно</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="header__nav-item d-lg-none">
+                    <a href="#" class="header__nav-item-link header__nav-item-link--sale">
+                        <img src="images/icon1.svg" alt="" class="mr-1">
+                        <span>Распродажа серверов</span>
+                    </a>
+                </li>
+                <li class="header__nav-item d-lg-block d-none">
+                    <a href="#" class="header__nav-item-link">Защита и хранение данных</a>
+                    <div class="header__nav-dropdown main-transition">
+                        <div class="container">
+                            <div class="row align-items-center mx-0">
+                                <div class="header__nav-description text-left">
+                                    <h6 class="d-block fw-700">ЗАЩИТА И ХРАНЕНИЕ ДАННЫХ</h6>
+                                    <span class="d-block">DATA STORAGE AND SECURITY</span>
+                                    <p class="fz-small mb-0">Услуги по хранению данных и защита от DDoS необходимы для
+                                        бизнеса, которому требуется масштабируемое надежное хранилище и наивысшая
+                                        безопасность.</p>
+                                </div>
+                                <ul class="header__nav-list flex-wrap list-unstyled d-flex justify-content-between">
+                                    <li class="header__nav-list-item mb-xl-0 mb-3">
+                                        <a href="#"
+                                           class="header__nav-list-link position-relative d-block text-left mb-3">Защита
+                                            Anti-DDoS</a>
+                                        <a href="#" class="btn btn-free btn-sale">Попробовать бесплатно</a>
+                                    </li>
+                                    <li class="header__nav-list-item mb-xl-0 mb-3">
+                                        <a href="#"
+                                           class="header__nav-list-link position-relative d-block text-left mb-3">Хранение
+                                            данных</a>
+                                        <a href="#" class="btn btn-free btn-sale">Попробовать бесплатно</a>
+                                    </li>
+                                    <li class="header__nav-list-item">
+                                        <a href="#"
+                                           class="header__nav-list-link position-relative d-block text-left mb-3">Серверы
+                                            хранения</a>
+                                        <a href="#" class="btn btn-free btn-sale">Попробовать бесплатно</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="header__nav-item d-lg-none">
+                    <a href="#" class="header__nav-item-link">Защита Anti-DDoS</a>
+                </li>
+                <li class="header__nav-item d-lg-none">
+                    <a href="#" class="header__nav-item-link">Серверы хранения</a>
+                </li>
+                <li class="header__nav-item d-lg-none">
+                    <a href="#" class="header__nav-item-link">Хранение данных</a>
+                </li>
+                <li id="headerContactWrapMobile" class="header__nav-item d-lg-none">
+                    <a href="#" class="header__nav-item-link header__nav-item-link--accordion position-relative">Связаться
+                        с нами</a>
+                </li>
+                <li class="header__nav-item d-lg-none">
+                    <a href="#" class="header__nav-item-link">Отзывы клиентов</a>
+                </li>
+                <li class="header__nav-item d-lg-block d-none">
+                    <a href="#" class="header__nav-item-link">О компании</a>
+                    <div class="header__nav-dropdown main-transition">
+                        <div class="container">
+                            <div class="row align-items-center mx-0">
+                                <div class="header__nav-description text-left">
+                                    <h6 class="d-block fw-700">О КОМПАНИИ</h6>
+                                    <span class="d-block">ABOUT US</span>
+                                    <p class="fz-small mb-0">Мы предлагаем клиентам высококачественный сервис и
+                                        выстраиваем долгосрочные отношения, основанные на доверии.</p>
+                                </div>
+                                <ul class="header__nav-list flex-wrap list-unstyled d-flex justify-content-between">
+                                    <li class="header__nav-list-item mb-xl-0 mb-3">
+                                        <a href="#"
+                                           class="header__nav-list-link position-relative d-block text-left">Контакты</a>
+                                    </li>
+                                    <li class="header__nav-list-item mb-xl-0 mb-3">
+                                        <a href="#"
+                                           class="header__nav-list-link position-relative d-block text-left">Блог</a>
+                                    </li>
+                                    <li class="header__nav-list-item">
+                                        <a href="#"
+                                           class="header__nav-list-link position-relative d-block text-left">Отзывы</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="header__nav-item fz-null header__nav-item-link d-lg-none">
+                    <a href="#"
+                       class="btn btn-language btn-language--en position-relative fz-small fw-400 mr-2">English</a>
+                    <a href="#" class="btn btn-language active btn-language--ru position-relative fz-small fw-400 ml-2">Русский</a>
+                </li>
+                <li class="header__nav-item  header__nav-item--mob-last fz-null header__nav-item-link header__nav-item-link--no-border d-lg-none">
+                    <a href="#" class="btn btn-contact position-relative mr-2 fw-400">Telegram-чат</a>
+                    <ul class="header__social-list list-unstyled fz-small text-white mb-0 d-inline-flex flex-wrap align-items-center justify-content-end ml-2">
+                        <li>
+                            <a href="#"
+                               class="header__social-link header__social-link--facebook d-inline-flex align-items-center justify-content-center main-transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                               class="header__social-link header__social-link--twitter d-inline-flex align-items-center justify-content-center main-transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="mr-0">
+                            <a href="#"
+                               class="header__social-link header__social-link--vk d-inline-flex align-items-center justify-content-center main-transition">
+                                <i class="fab fa-vk"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="hero text-white text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-12 mx-lg-auto">
+                    <ul class="breadcrumbs fz-small mb-4 pb-lg-1 list-unstyled justify-content-center d-flex flex-wrap">
+                        <li class="position-relative">
+                            <a href="#">Сервисы</a>
+                        </li>
+                        <li class="position-relative li--last">
+                            <a href="#">Geo IP</a>
+                        </li>
+                    </ul>
+                    <h1 class="mb-2 pb-lg-1">Geo IP — узнайте местоположение по IP</h1>
+                    <div class="hero__subheading">
+                        Сервис позволяет выполнить поиск адреса по IP с точностью <br> до города.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="info-ip">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-12 mx-lg-auto info-ip__content-wrap">
+                    <div class="info-ip__ip-details-wrap">
+                        <div class="info-ip__kicker dark-grey-color">IP-адрес или хостнейм</div>
+                        <div class="info-ip__ip-wrap d-flex flex-md-nowrap flex-wrap justify-content-between align-items-end">
+                            <form class="info-ip__ip-search info-ip__form position-relative mb-md-0 mb-3">
+                                <input class="info-ip__ip-search-input" type="search" placeholder="188.163.80.39">
+                                <button type="submit" class="info-ip__ip-search-btn">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.5 15.5L19 19" stroke="#727577" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M5 11C5 14.3137 7.68629 17 11 17C12.6597 17 14.1621 16.3261 15.2483 15.237C16.3308 14.1517 17 12.654 17 11C17 7.68629 14.3137 5 11 5C7.68629 5 5 7.68629 5 11Z" stroke="#727577" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </form>
+                            <div class="info-ip__button-wrap d-flex flex-wrap text-right">
+                                <a href="/05.3.GeoIP-Results.html" class="btn btn-main mb-sm-0 mb-3">
+                                    <span class="btn-main__text">проверить</span>
+                                </a>
+                                <a href="#" class="btn btn-secondary mb-sm-0 mb-3">узнать мой IP</a>
+                            </div>
+                        </div>
+                        <div class="info-ip__heading">Дополнительная информация</div>
+                        <ul class="info-ip__info-wrap fz-small d-flex flex-wrap list-unstyled mb-0">
+                            <li class="info-ip__info info-ip__info--top d-flex justify-content-between">
+                                <span class="info-ip__info-item-name dark-grey-color fw-500 c-pr-3">IP-адрес</span>
+                                <span class="info-ip__info-item-value text-right">188.163.80.39</span>
+                            </li>
+                            <li class="info-ip__info info-ip__info--sm-top d-flex justify-content-between">
+                                <span class="info-ip__info-item-name dark-grey-color fw-500 c-pr-3">Город</span>
+                                <span class="info-ip__info-item-value text-right">188.163.80.39</span>
+                            </li>
+                            <li class="info-ip__info d-flex justify-content-between">
+                                <span class="info-ip__info-item-name dark-grey-color fw-500 c-pr-3">Страна</span>
+                                <span class="info-ip__info-item-value text-right">Финляндия</span>
+                            </li>
+                            <li class="info-ip__info d-flex justify-content-between">
+                                <span class="info-ip__info-item-name dark-grey-color fw-500 c-pr-3">Широта</span>
+                                <span class="info-ip__info-item-value text-right">50.458</span>
+                            </li>
+                            <li class="info-ip__info d-flex justify-content-between">
+                                <span class="info-ip__info-item-name dark-grey-color fw-500 c-pr-3">Регион</span>
+                                <span class="info-ip__info-item-value text-right">Mannerheimintie</span>
+                            </li>
+                            <li class="info-ip__info d-flex justify-content-between">
+                                <span class="info-ip__info-item-name dark-grey-color fw-500 c-pr-3">Долгота</span>
+                                <span class="info-ip__info-item-value text-right">30.5303</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="info-ip__details-wrap">
+                        <div class="info-ip__heading">WHOIS Details</div>
+                        <div class="info-ip__whois-details-rows fz-small fw-300 m-0">
+                            <div class="info-ip__whois-details-row align-items-center info-ip__whois-details-row--header row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">NETBLOCK</div>
+                                <div class="whois-details-rows__column2 c-pr-3">COMPANY</div>
+                                <div class="whois-details-rows__column3 c-pr-3">NUM OF IPS</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">185.81.64.0/22</div>
+                                <div class="whois-details-rows__column2 c-pr-3">
+                                    <img src="images/NL.svg" alt="" class="whois-details-rows__image mr-1">
+                                    <span>OOO NIIR-RadioNet</span>
+                                </div>
+                                <div class="whois-details-rows__column3 c-pr-3">1,024</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">185.81.64.0/24</div>
+                                <div class="whois-details-rows__column2 c-pr-3">
+                                    <img src="images/IS.svg" alt="" class="whois-details-rows__image mr-1">
+                                    <span>Kairos LLCKairos LLC</span>
+                                </div>
+                                <div class="whois-details-rows__column3 c-pr-3">256</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">185.81.65.0/24</div>
+                                <div class="whois-details-rows__column2 c-pr-3">
+                                    <img src="images/NL.svg" alt="" class="whois-details-rows__image mr-1">
+                                    <span>OOO NIIR-RadioNet</span>
+                                </div>
+                                <div class="whois-details-rows__column3">256</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">213.139.230.0/24</div>
+                                <div class="whois-details-rows__column2 c-pr-3">
+                                    <img src="images/NL.svg" alt="" class="whois-details-rows__image mr-1">
+                                    <span>OOO NIIR-RadioNet</span>
+                                </div>
+                                <div class="whois-details-rows__column3 c-pr-3">4,096</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-ip__details-wrap">
+                        <div class="info-ip__heading">WHOIS Details</div>
+                        <ul class="info-ip__whois-details fz-small fw-300 list-unstyled mb-0">
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">as-block:</span>
+                                <span>AS16059 - AS16213</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">descr:</span>
+                                <span>RIPE NCC ASN block</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">remarks:</span>
+                                <span>These AS Numbers are assigned to network operators in the RIPE NCC service region.</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">mnt-by:</span>
+                                <span>RIPE-NCC-HM-MNT</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">created:</span>
+                                <span>2018-11-22T15:27:26Z</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">last-modified:</span>
+                                <span>2018-11-22T15:27:26Z</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">source:</span>
+                                <span>RIPE</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3"></span>
+                                <span></span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">aut-num:</span>
+                                <span>AS16143</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">as-name:</span>
+                                <span>RadioNet-AS</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">org:</span>
+                                <span>ORG-RA22-RIPE</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">import:</span>
+                                <span>from AS8631 action pref=60; from AS31133 action pref=70; from AS3216 action pref=70; from AS25478 action pref=70; from AS50384 action pref=70;from AS48347 action pref=70; accept ANY</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">export:</span>
+                                <span>to AS31133 announce AS-RATEL</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">export:</span>
+                                <span>to AS198261 announce ANY</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">export:</span>
+                                <span>to AS198261 announce ANY</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">export:</span>
+                                <span>to AS9002 announce AS-RATEL</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">export:</span>
+                                <span>to AS8631 announce AS-RATEL</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">export:</span>
+                                <span>to AS3216 announce AS-RATEL</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">export:</span>
+                                <span>to AS48347 announce AS-RATEL</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">export:</span>
+                                <span>to AS25478 announce AS-RATEL</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">export:</span>
+                                <span>to AS50384 announce AS-RATEL</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">export:</span>
+                                <span>to AS199582 announce ANY</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">import:</span>
+                                <span>from AS199582 accept AS199582</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">import:</span>
+                                <span>from AS43020 accept AS43020</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">export:</span>
+                                <span>to AS43020 announce ANY</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">export:</span>
+                                <span>to AS44546 announce ANY</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">import:</span>
+                                <span>from AS3179 accept AS3179</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">export:</span>
+                                <span>to AS3179 announce ANY</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">import:</span>
+                                <span>from AS201498 accept AS201498</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">import:</span>
+                                <span>from AS44546 accept AS44546</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">export:</span>
+                                <span>to AS201498 announce ANY</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">import:</span>
+                                <span>from AS208739 accept AS208739</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">export:</span>
+                                <span>to AS208739 announce ANY</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3"></span>
+                                <span></span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">organisation:</span>
+                                <span>ORG-RA22-RIPE</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">org-name:</span>
+                                <span>OOO NIIR-RadioNet</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">country:</span>
+                                <span>RU</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">org-type:</span>
+                                <span>LIR</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">address:</span>
+                                <span>Marksistskaya st. 34 bld.4</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">address:</span>
+                                <span>103064</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">address:</span>
+                                <span>Moscow,</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">address:</span>
+                                <span>RUSSIAN FEDERATION</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">phone:</span>
+                                <span>+7 495 728 77 50</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">fax-no:</span>
+                                <span>+7 495 728 77 52</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">e-mail:</span>
+                                <span>noc@ccs.ru</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">abuse-c:</span>
+                                <span>AR16875-RIPE</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">admin-c:</span>
+                                <span>KKD13-RIPE</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">admin-c:</span>
+                                <span>VT60-RIPE</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">mnt-ref:</span>
+                                <span>CCS-NOC</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">mnt-ref:</span>
+                                <span>RIPE-NCC-HM-MNT</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">mnt-by:</span>
+                                <span>RIPE-NCC-HM-MNT</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">mnt-by:</span>
+                                <span>CCS-NOC</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">created:</span>
+                                <span>2004-04-17T11:57:03Z</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">last-modified:</span>
+                                <span>2020-12-16T12:42:57Z</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">source:</span>
+                                <span>RIPE</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3"></span>
+                                <span></span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">role:</span>
+                                <span>RadioNet NOC</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">address:</span>
+                                <span>OOO NIIR-RadioNet</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">address:</span>
+                                <span>Kazakova 16</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">address:</span>
+                                <span>Moscow, Russia, 105064</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">remarks:</span>
+                                <span>phone: +7 095 7287751</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">phone:</span>
+                                <span>+7 495 7287751</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">remarks:</span>
+                                <span>fax-no: +7 095 7287752</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">fax-no:</span>
+                                <span>+7 495 7287752</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">e-mail:</span>
+                                <span>noc@ccs.ru</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">admin-c:</span>
+                                <span>KKD13-RIPE</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">tech-c:</span>
+                                <span>KKD13-RIPE</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">tech-c:</span>
+                                <span>AA27699-RIPE</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">nic-hdl:</span>
+                                <span>CCS-RIPE</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">mnt-by:</span>
+                                <span>CCS-NOC</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">created:</span>
+                                <span>1970-01-01T00:00:00Z</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">last-modified:</span>
+                                <span>2014-06-27T11:12:32Z</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">source:</span>
+                                <span>RIPE</span>
+                            </li>
+                            <li>
+                                <span class="info-ip__whois-details-name c-pr-3">remarks:</span>
+                                <span>modified for Russian phone area changes</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="info-ip__details-wrap">
+                        <div class="info-ip__heading">Hosted Domains</div>
+                        <div class="info-ip__whois-details-rows fz-small fw-300 m-0">
+                            <div class="info-ip__whois-details-row align-items-center info-ip__whois-details-row--header row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">IP ADDRESS</div>
+                                <div class="whois-details-rows__column2 c-pr-3">DOMAIN</div>
+                                <div class="whois-details-rows__column3 c-pr-3">DOMAINS ON THIS IP</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">217.76.32.182</div>
+                                <div class="whois-details-rows__column2 c-pr-3">xn--80a1acfcdgbb.xn--p1ai</div>
+                                <div class="whois-details-rows__column3 c-pr-3">8</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">217.76.32.60</div>
+                                <div class="whois-details-rows__column2 c-pr-3">linuxhacker.ru</div>
+                                <div class="whois-details-rows__column3 c-pr-3">4</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">217.76.35.139</div>
+                                <div class="whois-details-rows__column2 c-pr-3">xn--g1ajalin5e.xn--p1ai</div>
+                                <div class="whois-details-rows__column3 c-pr-3">3</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">217.76.40.52</div>
+                                <div class="whois-details-rows__column2 c-pr-3">logistnavigator.ru</div>
+                                <div class="whois-details-rows__column3 c-pr-3">3</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-ip__details-wrap">
+                        <div class="info-ip__heading">Peers</div>
+                        <div class="info-ip__whois-details-rows fz-small fw-300 m-0">
+                            <div class="info-ip__whois-details-row align-items-center info-ip__whois-details-row--header row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">PEERS</div>
+                                <div class="whois-details-rows__column2 c-pr-3">NAME</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">AS1299</div>
+                                <div class="whois-details-rows__column2 c-pr-3">Telia Company AB</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">AS199524</div>
+                                <div class="whois-details-rows__column2 c-pr-3">G-Core Labs S.A.</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">AS20764</div>
+                                <div class="whois-details-rows__column2 c-pr-3">CJSC RASCOM</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">AS24482</div>
+                                <div class="whois-details-rows__column2 c-pr-3">PJSC Vimpelcom</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-ip__details-wrap">
+                        <div class="info-ip__heading">Upstreams</div>
+                        <div class="info-ip__whois-details-rows fz-small fw-300 m-0">
+                            <div class="info-ip__whois-details-row align-items-center info-ip__whois-details-row--header row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">UPSTREAMS</div>
+                                <div class="whois-details-rows__column2 c-pr-3">NAME</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">AS1299</div>
+                                <div class="whois-details-rows__column2 c-pr-3">Telia Company AB</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">AS199524</div>
+                                <div class="whois-details-rows__column2 c-pr-3">G-Core Labs S.A.</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">AS20764</div>
+                                <div class="whois-details-rows__column2 c-pr-3">CJSC RASCOM</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">AS24482</div>
+                                <div class="whois-details-rows__column2 c-pr-3">PJSC Vimpelcom</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-ip__details-wrap">
+                        <div class="info-ip__heading">Downstreams</div>
+                        <div class="info-ip__whois-details-rows fz-small fw-300 m-0">
+                            <div class="info-ip__whois-details-row align-items-center info-ip__whois-details-row--header row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">DOWNSTREAMS</div>
+                                <div class="whois-details-rows__column2 c-pr-3">NAME</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">AS1299</div>
+                                <div class="whois-details-rows__column2 c-pr-3">Telia Company AB</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">AS199524</div>
+                                <div class="whois-details-rows__column2 c-pr-3">G-Core Labs S.A.</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">AS20764</div>
+                                <div class="whois-details-rows__column2 c-pr-3">CJSC RASCOM</div>
+                            </div>
+                            <div class="info-ip__whois-details-row align-items-center row flex-nowrap mx-0">
+                                <div class="whois-details-rows__column1 c-pr-3">AS24482</div>
+                                <div class="whois-details-rows__column2 c-pr-3">PJSC Vimpelcom</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-12 mx-lg-auto info-ip__additional-content">
+                    <h2 class="info-ip__section-heading text-center">Дополнительные сервисы</h2>
+                    <div class="row additional-services__wrap">
+                        <div class="col-xl-3 col-sm-6 col-12 mb-xl-0 mb-3 additional-services__link-wrap text-left fz-small">
+                            <div class="additional-services__link position-relative d-flex flex-wrap align-items-center h-100">
+                                <div class="additional-services__image-wrap">
+                                    <img src="images/Geo-IP.svg" alt="">
+                                </div>
+                                <div class="additional-services__about fw-500">Geo IP — узнайте местоположение по
+                                    IP
+                                </div>
+                                <a href="/05.3.GeoIP.html" class="pseudo-link"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 col-12 mb-xl-0 mb-3 additional-services__link-wrap text-left fz-small">
+                            <div class="additional-services__link position-relative d-flex flex-wrap align-items-center h-100">
+                                <div class="additional-services__image-wrap">
+                                    <img src="images/DNS-Icon.svg" alt="">
+                                </div>
+                                <div class="additional-services__about fw-500">Проверка DNS-записей домена</div>
+                                <a href="/04.2.DNS-Records-Results.html" class="pseudo-link"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 col-12 mb-xl-0 mb-3 additional-services__link-wrap text-left fz-small">
+                            <div class="additional-services__link position-relative d-flex flex-wrap align-items-center h-100">
+                                <div class="additional-services__image-wrap">
+                                    <img src="images/IP-Icons.svg" alt="">
+                                </div>
+                                <div class="additional-services__about fw-500">Узнай свой IP-адрес</div>
+                                <a href="/06.Your-IP-address.html" class="pseudo-link"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 col-12 mb-xl-0 mb-3 additional-services__link-wrap text-left fz-small">
+                            <div class="additional-services__link position-relative d-flex flex-wrap align-items-center h-100">
+                                <div class="additional-services__image-wrap">
+                                    <img src="images/Speedtest.svg" alt="">
+                                </div>
+                                <div class="additional-services__about fw-500">Проверить скорость интернета</div>
+                                <a href="/07.1.Speedtest.html" class="pseudo-link"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="info-ip__section-heading text-center">Остались вопросы?</h2>
+                    <div class="info-ip__faq-wrap pt-xl-2">
+                        <div class="accordion-group">
+                            <div class="accordion-wrap accordion-wrap--first">
+                                <h4 class="accordion-title accordion-title-click position-relative active">Что такое
+                                    маска подсети?</h4>
+                                <div class="accordion-content">
+                                    <p>Чтобы понять, что такое маска подсети сначала нужно узнать, что такое IP-адрес — это идентификатор каждого устройства, которое подключается к сети, чтобы они могли взаимодействовать друг с другом. IP-адрес выглядит как строка чисел, разделенных точками, например, 172.16.81.100.</p>
+                                    <p>Маска подсети тоже число, но она определяет диапазон IP-адресов, которые может использовать сеть. С её помощью сети могут делиться на небольшие подсети, которые подключаются к интернету. Проще говоря, задача маски подсети — скрыть сетевой элемент адреса, чтобы видимым остался только элемент хоста. Выглядит маска вот так: 255.255.255.0. Но маска подсети не является частью IP-пакета, поэтому при расшифровке IP-адреса онлайн это число отображаться не будет.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-wrap">
+                                <h4 class="accordion-title accordion-title-click position-relative">Зачем нужен сервис Geo IP?</h4>
+                                <div class="accordion-content">
+                                    <p>Утилита dig позволяет отправлять на DNS-сервер запросы с заданными
+                                        параметрами, чтобы узнать информацию обо всех или только о некоторых
+                                        DNS-записях. Аналог dig — утилита nslookup: с её помощью тоже можно
+                                        проверить DNS-записи домена.</p>
+                                    <p>Здесь вы можете воспользоваться онлайн-версией утилиты dig. Для этого
+                                        достаточно указать нужный домен, а также дополнительные параметры (при
+                                        необходимости).</p>
+                                    <p>— В поле «Домен» введите адрес, для которого вы хотите отобразить DNS-записи.<br>—
+                                        В выпадающем списке «Тип записи» выберите нужный тип DNS-записи (по
+                                        умолчанию отображаются все доступные записи).<br>— В поле «DNS сервер»
+                                        укажите конкретный DNS-сервер, для которого вы хотите проверить DNS-записи
+                                        (опционально).</p>
+                                    <p>Если вы хотите получить подробное отображение пути следования информации в
+                                        системе DNS, отметьте галочку «С трассировкой».
+                                        Для отображения информации в текстовом виде отметьте галочку «Текстовый
+                                        ответ».</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-wrap">
+                                <h4 class="accordion-title accordion-title-click position-relative">Как узнать адрес по IP-адресу?</h4>
+                                <div class="accordion-content">
+                                    <p>Чтобы понять, что такое маска подсети сначала нужно узнать, что такое
+                                        IP-адрес — это идентификатор каждого устройства, которое подключается к
+                                        сети, чтобы они могли взаимодействовать друг с другом. IP-адрес выглядит как
+                                        строка чисел, разделенных точками, например, 172.16.81.100.</p>
+                                    <p>Маска подсети тоже число, но она определяет диапазон IP-адресов, которые
+                                        может использовать сеть. С её помощью сети могут делиться на небольшие
+                                        подсети, которые подключаются к интернету. Проще говоря, задача маски
+                                        подсети — скрыть сетевой элемент адреса, чтобы видимым остался только
+                                        элемент хоста. Выглядит маска вот так: 255.255.255.0. Но маска подсети не
+                                        является частью IP-пакета, поэтому при расшифровке IP-адреса онлайн это
+                                        число отображаться не будет.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-wrap">
+                                <h4 class="accordion-title accordion-title-click position-relative">Почему геолокация определяется неточно?</h4>
+                                <div class="accordion-content">
+                                    <p>Чтобы понять, что такое маска подсети сначала нужно узнать, что такое
+                                        IP-адрес — это идентификатор каждого устройства, которое подключается к
+                                        сети, чтобы они могли взаимодействовать друг с другом. IP-адрес выглядит как
+                                        строка чисел, разделенных точками, например, 172.16.81.100.</p>
+                                    <p>Маска подсети тоже число, но она определяет диапазон IP-адресов, которые
+                                        может использовать сеть. С её помощью сети могут делиться на небольшие
+                                        подсети, которые подключаются к интернету. Проще говоря, задача маски
+                                        подсети — скрыть сетевой элемент адреса, чтобы видимым остался только
+                                        элемент хоста. Выглядит маска вот так: 255.255.255.0. Но маска подсети не
+                                        является частью IP-пакета, поэтому при расшифровке IP-адреса онлайн это
+                                        число отображаться не будет.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-wrap">
+                                <h4 class="accordion-title accordion-title-click position-relative">Почему сервис не отображает геолокацию?</h4>
+                                <div class="accordion-content">
+                                    <p>Чтобы понять, что такое маска подсети сначала нужно узнать, что такое
+                                        IP-адрес — это идентификатор каждого устройства, которое подключается к
+                                        сети, чтобы они могли взаимодействовать друг с другом. IP-адрес выглядит как
+                                        строка чисел, разделенных точками, например, 172.16.81.100.</p>
+                                    <p>Маска подсети тоже число, но она определяет диапазон IP-адресов, которые
+                                        может использовать сеть. С её помощью сети могут делиться на небольшие
+                                        подсети, которые подключаются к интернету. Проще говоря, задача маски
+                                        подсети — скрыть сетевой элемент адреса, чтобы видимым остался только
+                                        элемент хоста. Выглядит маска вот так: 255.255.255.0. Но маска подсети не
+                                        является частью IP-пакета, поэтому при расшифровке IP-адреса онлайн это
+                                        число отображаться не будет.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
