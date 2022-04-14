@@ -1050,12 +1050,12 @@ h1, .h1 {
     }
     .header__nav-item.active .header__nav-item-link {
         color: #039EFE;
-        border-bottom: 2px solid #039EFE;
+        background-color: #E1F2FE;
         font-weight: 700;
     }
     .header__nav-item:hover .header__nav-item-link {
-        color: #64c240;
-        border-bottom: 2px solid #64c240;
+        color: #039EFE;
+        background-color: #E1F2FE;
         text-decoration: none;
     }
     .header__nav-item:hover .header__nav-dropdown {
