@@ -97,4 +97,26 @@ h2.no-margin {
         border-bottom-right-radius: 7px;
         border-bottom-left-radius: 7px;
     }
+
+    .header__nav-dropdown {
+        display: block !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .header__nav-item {
+        position: relative;
+    }
+
+    .header__nav-dropdown .c-container {
+        max-width: 100%;
+    }
+
+    .header__nav-dropdown {
+        display: none;
+    }
+
+    .header .header__nav-dropdown {
+        padding: 0;
+    }
 }
