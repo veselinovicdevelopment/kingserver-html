@@ -12,6 +12,8 @@ $(window).on("load", function () {
                 },
             },
             loop: true,
+            updateOnWindowResize: true,
+            autoHeight: true,
             autoplay: {
                 delay: 8000,
             },
@@ -26,6 +28,7 @@ $(window).on("load", function () {
             },
         });
     }
+
     $(".tabs-tables__link--cpu").click(function () {
         $(".tabs-tables__link--cpu").removeClass("active");
         $(this).addClass("active");

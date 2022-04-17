@@ -45,6 +45,25 @@ h2.no-margin {
     flex: 1 1 0%;
 }
 
+.c-fz-small {
+    font-size: 14px !important;
+}
+
+.c-fz-medium {font-size: 16px !important;}
+.c-fz-large {font-size: 18px !important;}
+.c-text-red {color: #FF1B1B !important;}
+.c-border-0 {border: 0 !important;}
+
+.bg-white {background-color: #fff !important;}
+.text-line-through {text-decoration: line-through !important;}
+
+.custom-text-eclipse {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block !important;
+}
+
 /* Header */
 .header .info {
     padding: 12px;
@@ -77,6 +96,173 @@ h2.no-margin {
     background-color: #D4E9F7;
 }
 
+/* Base */
+html {
+    overflow-x: hidden;
+}
+
+.text-primary {
+    color: #1D1F24 !important;
+}
+
+.text-gray {
+    color: #696A6E !important;
+}
+
+.shadow {
+    box-shadow: 0 5px 20px rgb(0 0 0 / 5%);
+}
+
+.shadow-none {
+    box-shadow: none !important;
+}
+
+.max-full {
+    max-width: 100% !important;
+}
+
+.home .swiper-wrapper {
+    height: auto !important;
+}
+
+/* Home Page */
+/* Service Section */
+.service-container {
+    padding: 100px 0;
+    background-color: #F5F7F8;
+}
+
+.service-card {
+    margin-bottom: 30px;
+    border-radius: 6px;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 5%);
+}
+
+.service-card-details {
+    padding: 23px;
+}
+
+.service-card-details h5 {
+    font-size: 14px;
+    color: #696A6E;
+}
+
+.service-card-details h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1D1F24;
+}
+
+/* Testimonials Section */
+.testimonial-container {
+    padding: 100px 0;
+    background-color: #D0EBFE;
+}
+
+.testimonial {
+    padding: 24px 20px;
+    border-radius: 6px;
+}
+
+.testimonial figure {
+    width: 50px;
+}
+
+.testimonial-sub-title {
+    font-size: 16px;
+}
+
+.testimonial-desc {
+    font-size: 14px;
+}
+
+/* Dedicate Server Page */ 
+.dedicated-servers .list-item-big .line-info {
+    background-color: #fff;
+}
+
+.dedicated-servers .list-item-big .line-info .title {
+    font-size: 20px;
+    color: #1D1F24;
+}
+
+.dedicated-servers .list-item-big .list-card-tablet .list-item .row-too {
+    padding: 0 0 0 20px;
+}
+
+.dedicated-servers input[type="radio"].order-radio:checked+label {
+    background: #1D1F24;
+}
+
+.dedicated-servers .list-item-small .card-top {
+    padding: 31px 31px 0;
+}
+
+.dedicated-servers .list-item-small .card-middle ul li .card-content {
+    margin: 0;
+    padding-top: 2px;
+}
+
+.dedicated-servers .card-middle li {
+    display: flex;
+    margin-bottom: 5px;
+    padding: 0 5px;
+    height: 32px;
+    align-items: center;
+    background-color: #f6f6f6;
+}
+
+.dedicated-servers .list-item-small .card-middle ul li .card-content span {
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.dedicated-servers .card-bottom >div {
+    border-bottom: 1px solid #EAEBEC
+}
+
+.dedicated-servers .list-item-small .card-middle {
+    margin: 0 31px;
+    padding-bottom: 17px;
+    border-bottom-color: #EAEBEC;
+}
+
+.dedicated-servers select {
+    font-family: sans-serif !important; 
+}
+
+.update .dedicated-servers label {
+    margin: 0;
+}
+
+.h-44 {
+    height: 44px !important;
+}
+
+.language-group >div {
+    border: 1px solid #EAEBEC !important;
+}
+
+.language-group label {
+    width: calc( 1000% / 3 );
+}
+
+.language-group label {
+    border-right: 1px solid #EAEBEC !important;;
+}
+
+.select-one {
+    width: 65% !important;
+}
+
+.select-two {
+    width: 35% !important;
+}
+
+.c-w-20 {
+    width: 20% !important;
+}
+
 /* Responsive */
 /* Header */
 @media (min-width: 992px) {
@@ -100,6 +286,13 @@ h2.no-margin {
 
     .header__nav-dropdown {
         display: block !important;
+    }
+}
+
+/* Dedicate Server Page */ 
+@media screen and (min-width: 1140px) {
+    .dedicated-servers .list-item-big {
+        width: 65%;
     }
 }
 
