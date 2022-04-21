@@ -96,6 +96,23 @@ h2.no-margin {
     background-color: #D4E9F7;
 }
 
+.header__social-link--telegram {
+    background: #1DA1F2;
+}
+
+.header__contact-number h5 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.header__contact-number a.fw-400 {
+    color: #039EFE;
+    font-size: 13px;
+    line-height: 18px;
+    text-decoration: underline;
+}
+
 /* Base */
 html {
     overflow-x: hidden;
