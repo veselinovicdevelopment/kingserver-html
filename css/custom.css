@@ -25,14 +25,14 @@ h2.no-margin {
 .perf-scale {
     width: 126px;
     height: 9px;
-    background: url("/img/scale.png") repeat-x;
+    background: url("./img/scale.png") repeat-x;
     position: relative;
 }
 .perf-scale .active {
     display: block;
     height: 9px;
     width: 0;
-    background: url("/img/scale-active.png") repeat-x;
+    background: url("./img/scale-active.png") repeat-x;
     position: absolute;
     left: 0;
     top: 0;
