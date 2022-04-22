@@ -170,6 +170,10 @@ html {
     color: #1D1F24;
 }
 
+.service-card-details h4 a {
+    color: inherit;
+}
+
 /* Testimonials Section */
 .testimonial-container {
     padding: 100px 0;
